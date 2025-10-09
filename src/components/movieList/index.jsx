@@ -1,6 +1,6 @@
 import React from "react";
 import Movie from "../movieCard/";
-import Grid from "@mui/material/Grid2";
+import Grid from "@mui/material/Grid";
 
 const MovieList = (props) => {
   let movieCards = props.movies.map((m) => (

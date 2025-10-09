@@ -6,20 +6,20 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { getMovieReviews } from "../../api/tmdb-api";
 import { excerpt } from "../../util";
-import { useQuery } from 'react-query';
-import Spinner from '../spinner';
+import { useQuery } from "@tanstack/react-query";
+import Spinner from '../spinner'
+
 
 export default function MovieReviews({ movie }) {
+  const { data, error, isPending, isError } = useQuery({
+    queryKey: ['reviews', { id: movie.id }],
+    queryFn: getMovieReviews,
+  });
   
-  const { data , error, isLoading, isError } = useQuery(
-    ["reviews", { id: movie.id }],
-    getMovieReviews
-  );
-  
-  if (isLoading) {
+  if (isPending) {
     return <Spinner />;
   }
 
@@ -28,6 +28,7 @@ export default function MovieReviews({ movie }) {
   }
   
   const reviews = data.results;
+
 
   return (
     <TableContainer component={Paper}>

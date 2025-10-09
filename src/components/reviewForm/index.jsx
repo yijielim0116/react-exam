@@ -8,7 +8,8 @@ import { useForm, Controller } from "react-hook-form";
 import { MoviesContext } from "../../contexts/moviesContext";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
+
 
 const ratings = [
   {
@@ -61,23 +62,28 @@ const styles = {
 };
 
 const ReviewForm = ({ movie }) => {
+
   const context = useContext(MoviesContext);
+
   const [rating, setRating] = useState(3);
-  const [open, setOpen] = useState(false); 
+
+  const [open, setOpen] = useState(false);
   const navigate = useNavigate();
-  
+
   const handleSnackClose = (event) => {
     setOpen(false);
     navigate("/movies/favorites");
   };
-  
+
+
+
   const defaultValues = {
     author: "",
     review: "",
     agree: false,
     rating: "3",
   };
-  
+
   const {
     control,
     formState: { errors },
@@ -94,8 +100,9 @@ const ReviewForm = ({ movie }) => {
     review.rating = rating;
     // console.log(review);
     context.addReview(movie, review);
-    setOpen(true); // NEW
+    setOpen(true);
   };
+
 
   return (
     <Box component="div" sx={styles.root}>
@@ -119,6 +126,7 @@ const ReviewForm = ({ movie }) => {
           </Typography>
         </MuiAlert>
       </Snackbar>
+
       <form sx={styles.form} onSubmit={handleSubmit(onSubmit)} noValidate>
         <Controller
           name="author"

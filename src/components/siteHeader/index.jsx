@@ -7,14 +7,14 @@ import Button from "@mui/material/Button";
 import MenuIcon from "@mui/icons-material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 import { styled } from '@mui/material/styles';
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 const Offset = styled('div')(({ theme }) => theme.mixins.toolbar);
 
-const SiteHeader = ({ history }) => {
+const SiteHeader = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -31,7 +31,8 @@ const SiteHeader = ({ history }) => {
   ];
 
   const handleMenuSelect = (pageURL) => {
-    navigate(pageURL, { replace: true });
+    setAnchorEl(null);
+    navigate(pageURL);
   };
 
   const handleMenu = (event) => {

@@ -24,10 +24,10 @@ git clone https://github.com/rbirney/react-exam.git
 
 - Create an .env file in the base folder. 
 
-- Add your TMDB API key (the same as you used in the React labs)
+- Add your TMDB API key (the same one that you used in the React labs)
 
 ~~~bash
-REACT_APP_TMDB_KEY=YOUR_KEY_GOES_HERE
+VITE_TMDB_KEY=YOUR_KEY_GOES_HERE
 FAST_REFRESH=false
 ~~~
 
@@ -54,7 +54,7 @@ In your VS Code terminal, run the following commands:
 
 ~~~bash
 npm install
-npm start
+npm run dev
 ~~~
 
 Now check that the Movie App runs correctly and is accessible from a browser on your machine.
@@ -88,4 +88,4 @@ Once you have created your GitHub repository you can submit it to Moodle (no nee
 
 You can submit it here:
 
-[https://moodle.wit.ie/mod/assign/view.php?id=4357694](https://moodle.wit.ie/mod/assign/view.php?id=4357694)
+[https://moodle.setu.ie/mod/assign/view.php?id=4606492](https://moodle.setu.ie/mod/assign/view.php?id=4606492)
