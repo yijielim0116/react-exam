@@ -1,4 +1,4 @@
-# React In-class Exam, November 2024
+# React In-class Exam, October 2025
 
 ## 1. Setup instructions
 
@@ -65,7 +65,7 @@ Now check that the Movie App runs correctly and is accessible from a browser on 
 Add your name and student number to the README.md file, as shown below:
 
 ~~~markdown
-# React In-class Exam, November 2024
+# React In-class Exam, October 2025
 
 Your Name, Student Number
 ...
